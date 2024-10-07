@@ -13,38 +13,22 @@ pickle_in = open("SVC_model.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 #@app.route('/')
-def welcome():
-    return "Welcome All"
+# Define the mapping of numbers to crop names
+crop_mapping = {
+    1: "Rice",
+    2: "Maize", 3: "Jute", 4: "Cotton",
+    5: "Coconut",  6: "Papaya",   7: "Orange", 8: "Apple", 9: "Muskmelon",
+    10: "Watermelon", 11: "Grapes", 12: "Mango", 13: "Banana", 14: "Pomegranate", 15: "Lentil",
+    16: "Blackgram", 17: "Mungbean", 18: "Mothbeans", 19: "Pigeonpeas", 20: "Kidneybeans",
+    21: "Chickpea",
+    22: "Coffee"
+}
+
 
 #@app.route('/predict',methods=["Get"])
-def predict_note_authentication(nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall):
+def predict_crop_authentication(nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall):
     
-    """Let's Authenticate the Banks Note 
-    This is using docstrings for specifications.
-    ---
-    parameters:  
-      - name: variance
-        in: query
-        type: number
-        required: true
-      - name: skewness
-        in: query
-        type: number
-        required: true
-      - name: curtosis
-        in: query
-        type: number
-        required: true
-      - name: entropy
-        in: query
-        type: number
-        required: true
-    responses:
-        200:
-            description: The output values
-        
-    """
-   
+
     prediction=classifier.predict([[nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall]])
     print(prediction)
     return prediction
@@ -52,10 +36,10 @@ def predict_note_authentication(nitrogen,phosphorus,potassium,temperature,humidi
 
 
 def main():
-    st.title("Bank Authenticator")
+    st.title("Crop Prediction on Soil and others analysis")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+    <h2 style="color:white;text-align:center;">Crop Prediction ML App </h2>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
@@ -69,10 +53,15 @@ def main():
 
     result=""
     if st.button("Predict"):
-        result=predict_note_authentication(nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall)
+        # result=predict_crop_authentication(nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall)
+        prediction_number = predict_crop_authentication(nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall)
+        # Map the prediction number to the crop name
+        result = crop_mapping.get(prediction_number, "Unknown Crop")  # Default to "Unknown Crop" if not found
+        
     st.success('The output is {}'.format(result))
+    
     if st.button("About"):
-        st.text("Lets LEarn")
+        st.text("@Shamik")
         st.text("Built with Streamlit")
 
 if __name__=='__main__':
