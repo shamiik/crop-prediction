@@ -1,4 +1,3 @@
-
 import numpy as np
 import pickle
 import pandas as pd
@@ -18,7 +17,7 @@ def welcome():
     return "Welcome All"
 
 #@app.route('/predict',methods=["Get"])
-def predict_note_authentication(variance,skewness,curtosis,entropy):
+def predict_note_authentication(nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall):
     
     """Let's Authenticate the Banks Note 
     This is using docstrings for specifications.
@@ -46,7 +45,7 @@ def predict_note_authentication(variance,skewness,curtosis,entropy):
         
     """
    
-    prediction=classifier.predict([[variance,skewness,curtosis,entropy]])
+    prediction=classifier.predict([[nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall]])
     print(prediction)
     return prediction
 
@@ -60,13 +59,17 @@ def main():
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
-    variance = st.text_input("Variance","Type Here")
-    skewness = st.text_input("skewness","Type Here")
-    curtosis = st.text_input("curtosis","Type Here")
-    entropy = st.text_input("entropy","Type Here")
+    nitrogen = st.text_input("nitrogen","Type Here")
+    phosphorus = st.text_input("phosphorus","Type Here")
+    potassium = st.text_input("potassium","Type Here")
+    temperature = st.text_input("temperature","Type Here")
+    humidity = st.text_input("humidity","Type Here")
+    ph = st.text_input("ph","Type Here")
+    rainfall = st.text_input("rainfall","Type Here")
+
     result=""
     if st.button("Predict"):
-        result=predict_note_authentication(variance,skewness,curtosis,entropy)
+        result=predict_note_authentication(nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Lets LEarn")
