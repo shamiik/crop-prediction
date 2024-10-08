@@ -59,7 +59,7 @@ def main():
     st.success('The predicted crop is: {}'.format(result))
     
     if st.button("About"):
-        st.text("@Shamik")
+        
         st.write("""
     We developed this application to assist farmers and agricultural enthusiasts in predicting suitable crops based on environmental conditions. 
     The app focuses on 22 different crops and uses input parameters such as nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall to provide accurate predictions.
@@ -70,6 +70,7 @@ def main():
     - **Input Parameters**: Users can input values for nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall. 
     - **Prediction**: Based on these values, the model predicts the most suitable crop, allowing users to make informed decisions for better yield and resource management.
     """)
+        st.text("@Shamiik")
 if __name__ == '__main__':
     main()
 
