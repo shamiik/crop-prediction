@@ -28,7 +28,7 @@ def predict_crop_authentication(nitrogen, phosphorus, potassium, temperature, hu
     return int(prediction[0])  # Ensure we return a scalar integer
 
 def main():
-    st.title("Crop Prediction on Soil and others analysis")
+    st.title("Precision Crop Recommendations Using SVM")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;">Crop Prediction ML App </h2>
