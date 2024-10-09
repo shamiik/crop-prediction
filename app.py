@@ -61,17 +61,18 @@ def main():
     if st.button("About"):
         
         st.write("""
-    he Crop Prediction App is a smart tool designed to help farmers, agricultural specialists, and enthusiasts make informed decisions about which crops to grow based on environmental factors. By using machine learning algorithms, the app takes key agricultural inputs such as soil nutrients (nitrogen, phosphorus, potassium), climate data (temperature, humidity, rainfall), and soil pH to accurately recommend the most suitable crops for specific conditions.
+        The Crop Prediction App is a smart tool designed to help farmers, agricultural specialists, and enthusiasts make informed decisions about which crops to grow based on environmental factors. By using machine learning algorithms, the app takes key agricultural inputs such as soil nutrients (nitrogen, phosphorus, potassium), climate data (temperature, humidity, rainfall), and soil pH to accurately recommend the most suitable crops for specific conditions.
 
-    **Key Features**:
+        ###Key Features:
         - **Comprehensive Crop Support**: Supports predictions for 22 different crops, ensuring a wide range of options for diverse farming needs.
         - **Data-Driven**: Uses environmental parameters to predict crop suitability, offering data-driven insights to optimize yields.
         - **Simple and Intuitive Interface**: Easy to use for both seasoned farmers and those new to agriculture.
-    **Who Is It For**?
+        ###Who Is It For?
         - Farmers seeking to maximize crop yield based on scientific analysis.
         - Agricultural researchers or students looking for insights into crop growth patterns.
         - Enthusiasts aiming to improve farming practices using technology.
-        By integrating advanced predictive algorithms with user-friendly design, the app empowers users to make better decisions, minimize risks, and improve resource management in farming.
+        By integrating advanced predictive algorithms with user-friendly design, the app empowers users to make better decisions, minimize risks, and improve resource management in farming.""")
+        
         st.text("@Shamiik")
 if __name__ == '__main__':
     main()
