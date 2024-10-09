@@ -61,15 +61,17 @@ def main():
     if st.button("About"):
         
         st.write("""
-    We developed this application to assist farmers and agricultural enthusiasts in predicting suitable crops based on environmental conditions. 
-    The app focuses on 22 different crops and uses input parameters such as nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall to provide accurate predictions.
-    
-    **Crops Supported**: Rice, Maize, Jute, Cotton, Coconut, Papaya, Orange, Apple, Muskmelon, Watermelon, Grapes, Mango, Banana, Pomegranate, Lentil, Blackgram, Mungbean, Mothbeans, Pigeonpeas, Kidneybeans, Chickpea, Coffee.
-    
-    **How It Works**: 
-    - **Input Parameters**: Users can input values for nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall. 
-    - **Prediction**: Based on these values, the model predicts the most suitable crop, allowing users to make informed decisions for better yield and resource management.
-    """)
+    he Crop Prediction App is a smart tool designed to help farmers, agricultural specialists, and enthusiasts make informed decisions about which crops to grow based on environmental factors. By using machine learning algorithms, the app takes key agricultural inputs such as soil nutrients (nitrogen, phosphorus, potassium), climate data (temperature, humidity, rainfall), and soil pH to accurately recommend the most suitable crops for specific conditions.
+
+    **Key Features**:
+        - **Comprehensive Crop Support**: Supports predictions for 22 different crops, ensuring a wide range of options for diverse farming needs.
+        - **Data-Driven**: Uses environmental parameters to predict crop suitability, offering data-driven insights to optimize yields.
+        - **Simple and Intuitive Interface**: Easy to use for both seasoned farmers and those new to agriculture.
+    **Who Is It For**?
+        - Farmers seeking to maximize crop yield based on scientific analysis.
+        - Agricultural researchers or students looking for insights into crop growth patterns.
+        - Enthusiasts aiming to improve farming practices using technology.
+        By integrating advanced predictive algorithms with user-friendly design, the app empowers users to make better decisions, minimize risks, and improve resource management in farming.
         st.text("@Shamiik")
 if __name__ == '__main__':
     main()
