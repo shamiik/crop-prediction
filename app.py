@@ -53,7 +53,7 @@ def main():
             # result = crop_mapping.get(prediction_number, "Unknown Crop")  # Default to "Unknown Crop" if not found
             inputs = [float(nitrogen), float(phosphorus), float(potassium), float(temperature), float(humidity), float(ph), float(rainfall)]
             
-            # Check if all inputs are the same value
+            # Check if all inputs have the same value
             if len(set(inputs)) == 1:
                 st.error("Please input proper values. All values cannot be identical.")
             else:
@@ -68,7 +68,6 @@ def main():
         except Exception as e:
             st.error(f"An error occurred: {e}")
     
-    st.success('The predicted crop is: {}'.format(result))
     
 with st.sidebar:
     if st.button("About"):
