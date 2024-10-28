@@ -28,7 +28,7 @@ def predict_crop_authentication(nitrogen, phosphorus, potassium, temperature, hu
     return int(prediction[0])  # Ensure we return a scalar integer
 
 def main():
-    st.title("Precision Crop Recommendations Using SVM")
+    st.title("Precision Crop Recommendations Using Random Forest")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;"> SmartCrop: AI-Powered Crop Recommendations </h2>
