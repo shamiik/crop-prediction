@@ -58,7 +58,7 @@ def main():
     
     st.success('The predicted crop is: {}'.format(result))
     
-    with st.sidebar:
+with st.sidebar:
     if st.button("About"):
         st.markdown("""
         The Crop Prediction App is a smart tool designed to help farmers, agricultural specialists, and enthusiasts make informed decisions about which crops to grow based on environmental factors. By using machine learning algorithms, the app takes key agricultural inputs such as soil nutrients (nitrogen, phosphorus, potassium), climate data (temperature, humidity, rainfall), and soil pH to accurately recommend the most suitable crops for specific conditions.
