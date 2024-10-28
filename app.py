@@ -47,10 +47,22 @@ def main():
     result = ""
     if st.button("Predict"):
         try:
-            # Get the prediction number
-            prediction_number = predict_crop_authentication(nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall)
-            # Map the prediction number to the crop name
-            result = crop_mapping.get(prediction_number, "Unknown Crop")  # Default to "Unknown Crop" if not found
+            # # Get the prediction number
+            # prediction_number = predict_crop_authentication(nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall)
+            # # Map the prediction number to the crop name
+            # result = crop_mapping.get(prediction_number, "Unknown Crop")  # Default to "Unknown Crop" if not found
+            inputs = [float(nitrogen), float(phosphorus), float(potassium), float(temperature), float(humidity), float(ph), float(rainfall)]
+            
+            # Check if all inputs are the same value
+            if len(set(inputs)) == 1:
+                st.error("Please input proper values. All values cannot be identical.")
+            else:
+                # Get the prediction number
+                prediction_number = predict_crop_authentication(nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall)
+                # Map the prediction number to the crop name
+                result = crop_mapping.get(prediction_number, "Unknown Crop")  # Default to "Unknown Crop" if not found
+                st.success('The predicted crop is: {}'.format(result))
+                
         except ValueError as e:
             st.error(f"Error in input data: {e}")
         except Exception as e:
