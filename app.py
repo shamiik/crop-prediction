@@ -6,7 +6,7 @@ import pandas as pd
 import streamlit as st 
 
 # Load the trained model
-pickle_in = open("SVC_model.pkl", "rb")
+pickle_in = open("RF_classifier_model.pkl", "rb")
 classifier = pickle.load(pickle_in)
 
 # Define the mapping of numbers to crop names
