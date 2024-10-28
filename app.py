@@ -73,7 +73,7 @@ with st.sidebar:
         - Enthusiasts aiming to improve farming practices using technology.
         By integrating advanced predictive algorithms with user-friendly design, the app empowers users to make better decisions, minimize risks, and improve resource management in farming.
         """)
-        st.text("@Shamiik")
+        
         
      
 if __name__ == '__main__':
