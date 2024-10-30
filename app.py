@@ -56,6 +56,13 @@ def main():
             # Check if all inputs have the same value
             if len(set(inputs)) == 1:
                 st.error("Please input proper values. All values cannot be identical.")
+
+             # Check ranges for each input
+            elif not (0 <= inputs[0] <= 140 and 5 <= inputs[1] <= 145 and 5 <= inputs[2] <= 205 and 
+                      8 <= inputs[3] <= 45 and 14 <= inputs[4] <= 100 and 3 <= inputs[5] <= 9.95 and 
+                      20 <= inputs[6] <= 300):
+                st.error("Sorry, Not able to recommend a proper crop for this environment")
+
             else:
                 # Get the prediction number
                 prediction_number = predict_crop_authentication(nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall)
@@ -70,7 +77,7 @@ def main():
     
     
 with st.sidebar:
-    if st.button("About"):
+    if st.button("About this app"):
         st.markdown("""
         The Crop Prediction App is a smart tool designed to help farmers, agricultural specialists, and enthusiasts make informed decisions about which crops to grow based on environmental factors. By using machine learning algorithms, the app takes key agricultural inputs such as soil nutrients (nitrogen, phosphorus, potassium), climate data (temperature, humidity, rainfall), and soil pH to accurately recommend the most suitable crops for specific conditions.
 
