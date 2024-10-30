@@ -31,7 +31,7 @@ def main():
     st.title("Precision Crop Recommendations Using Random Forest")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;"> SmartCrop: AI-Powered Crop Recommendations </h2>
+    <h2 style="color:grey;text-align:center;"> SmartCrop: AI-Powered Crop Recommendations </h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
