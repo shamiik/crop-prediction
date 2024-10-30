@@ -36,9 +36,9 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     
-    nitrogen = st.text_input("Nitrogen (The ratio of Nitrogen content in soil)", placeholder=  "Type here the value")
-    phosphorus = st.text_input("Phosphorus (The ratio of Phosphorus content in soil)", placeholder= "Type here the value")
-    potassium = st.text_input("Potassium (The ratio of Potassium content in soil)", placeholder="Type here the value")
+    nitrogen = st.text_input("Nitrogen (The ratio of Nitrogen content in soil, mg/kg)", placeholder=  "Type here the value")
+    phosphorus = st.text_input("Phosphorus (The ratio of Phosphorus content in soil, mg/kg)", placeholder= "Type here the value")
+    potassium = st.text_input("Potassium (The ratio of Potassium content in soil, mg/kg)", placeholder="Type here the value")
     temperature = st.text_input("Temperature (°C)", placeholder="Type here the value")
     humidity = st.text_input("Humidity (Relative humidity in %)", placeholder= "Type here the value")
     ph = st.text_input("pH (ph value of the soil)", placeholder= "Type here the value")
@@ -61,7 +61,7 @@ def main():
             elif not (0 <= inputs[0] <= 140 and 5 <= inputs[1] <= 145 and 5 <= inputs[2] <= 205 and 
                       8 <= inputs[3] <= 45 and 14 <= inputs[4] <= 100 and 3 <= inputs[5] <= 9.95 and 
                       20 <= inputs[6] <= 300):
-                st.error("Sorry, Not able to recommend a proper crop for this environment")
+                st.error("Sorry, Not able to recommend a suitable crop for this environment. For more details on the input values, please check the 'About' section.")
 
             else:
                 # Get the prediction number
@@ -79,13 +79,26 @@ def main():
 with st.sidebar:
     if st.button("About this app"):
         st.markdown("""
-        The Crop Prediction App is a smart tool designed to help farmers, agricultural specialists, and enthusiasts make informed decisions about which crops to grow based on environmental factors. By using machine learning algorithms, the app takes key agricultural inputs such as soil nutrients (nitrogen, phosphorus, potassium), climate data (temperature, humidity, rainfall), and soil pH to accurately recommend the most suitable crops for specific conditions.
+        The Crop Prediction App is a smart tool designed to help farmers, agricultural specialists, and enthusiasts make informed decisions about which crops to grow based on environmental factors. 
+        By using machine learning algorithms, the app takes key agricultural inputs such as soil nutrients (nitrogen, phosphorus, potassium), climate data (temperature, humidity, rainfall), and soil pH to accurately recommend the most suitable crops for specific conditions.
 
-        ###Key Features:
+        This app provides comprehensive insights into key soil and environmental parameters. It measures:
+
+        - Nitrogen levels: Ranging from 0 to 140 mg/kg
+        - Phosphorus levels: Ranging from 5 to 145 mg/kg
+        - Potassium levels: Ranging from 5 to 205 mg/kg
+        - Temperature: Ranging from 8°C to 45°C
+        - Humidity: Ranging from 14% to 100%
+        - pH values: Ranging from 3 to 9.95
+        - Rainfall: Ranging from 20 to 300 mm
+        
+        #Key Features:
         - **Comprehensive Crop Support**: Supports predictions for 22 different crops, ensuring a wide range of options for diverse farming needs.
         - **Data-Driven**: Uses environmental parameters to predict crop suitability, offering data-driven insights to optimize yields.
         - **Simple and Intuitive Interface**: Easy to use for both seasoned farmers and those new to agriculture.
-        ###Who Is It For?
+
+        
+        #Who Is It For?
         - Farmers seeking to maximize crop yield based on scientific analysis.
         - Agricultural researchers or students looking for insights into crop growth patterns.
         - Enthusiasts aiming to improve farming practices using technology.
