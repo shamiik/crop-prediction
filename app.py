@@ -36,9 +36,9 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     
-    nitrogen = st.text_input("Nitrogen (The ratio of Nitrogen content in soil, mg/kg)", placeholder=  "Type here the value")
-    phosphorus = st.text_input("Phosphorus (The ratio of Phosphorus content in soil, mg/kg)", placeholder= "Type here the value")
-    potassium = st.text_input("Potassium (The ratio of Potassium content in soil, mg/kg)", placeholder="Type here the value")
+    nitrogen = st.text_input("Nitrogen (The ratio of Nitrogen content in soil, kg/ha)", placeholder=  "Type here the value")
+    phosphorus = st.text_input("Phosphorus (The ratio of Phosphorus content in soil, kg/ha)", placeholder= "Type here the value")
+    potassium = st.text_input("Potassium (The ratio of Potassium content in soil, kg/ha)", placeholder="Type here the value")
     temperature = st.text_input("Temperature (°C)", placeholder="Type here the value")
     humidity = st.text_input("Humidity (Relative humidity in %)", placeholder= "Type here the value")
     ph = st.text_input("pH (ph value of the soil)", placeholder= "Type here the value")
@@ -84,9 +84,9 @@ with st.sidebar:
 
         This app provides comprehensive insights into key soil and environmental parameters. It measures:
 
-        - Nitrogen levels: Ranging from 0 to 140 mg/kg
-        - Phosphorus levels: Ranging from 5 to 145 mg/kg
-        - Potassium levels: Ranging from 5 to 205 mg/kg
+        - Nitrogen levels: Ranging from 0 to 140 kg per hector
+        - Phosphorus levels: Ranging from 5 to 145 kg per hector
+        - Potassium levels: Ranging from 5 to 205 kg per hector
         - Temperature: Ranging from 8°C to 45°C
         - Humidity: Ranging from 14% to 100%
         - pH values: Ranging from 3 to 9.95
